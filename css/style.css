@@ -1,5 +1,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans:opsz@6..12&family=Poppins&display=swap');
 
 *{
-    font-family: 'Lato', sans-serif;;
+    font-family: 'Lato', sans-serif;
+   
+}
+
+
+body{
+    background-color: #FEC53C;
+    display: grid;
+}
+
+ul{
+    padding: 15px !important;
+}
+
+img{
+    width: 18%;
+    
+}
+
+#main-home{
+    background-color: #070707;
+    border-bottom: #FEC53C 1px solid;
+
+}
+
+#main-sect1{
+    background-image: url('https://i.postimg.cc/vBjkMFpd/generate-movies-coll-1.jpg');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: #FEC53C 1px solid;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ABOUT PAGE */
+
+#about-main{
+    background-image: url('https://i.postimg.cc/23p4C2k6/fotor-ai-20231204112125.jpg');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    font-size: 23px;
+}
+
+#owner img{
+    border-radius: 15px;
 }
