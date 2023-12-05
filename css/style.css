@@ -1,5 +1,79 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans:opsz@6..12&family=Poppins&display=swap');
 
 *{
-    font-family: 'Lato', sans-serif;;
+    font-family: 'Lato', sans-serif;
+   
+}
+
+
+body{
+    background-color: #FEC53C;
+    display: grid;
+}
+
+ul{
+    padding: 15px !important;
+}
+
+img{
+    width: 18%;
+    
+}
+
+#main-home{
+    background-color: #070707;
+    border-bottom: #FEC53C 1px solid;
+
+}
+
+#main-sect1{
+    background-image: url('https://i.postimg.cc/3xtT8s3b/Project-2.jpg');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: #FEC53C 1px solid;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ABOUT PAGE */
+
+#about-main{
+    background-image: url('https://i.postimg.cc/8P0Cwf6C/Project-3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    font-size: 23px;
+}
+
+#owner{
+    display: flex;
+    justify-content: space-around;
+    margin: 45px 12%;
+}
+
+#owner img{
+    margin-top: 25px;
+    border-radius: 15px;
+    height: 305px;
+}
+
+#about-main p{
+    text-shadow: 0 0 4px  #2b2b2b;
+    text-emphasis: 2.9px;
+    margin: 15px 5%;
+    
+}
+
+#owner p{
+    text-shadow: 0 0 4px  #2b2b2b;
+    text-emphasis: 2.9px;
 }
