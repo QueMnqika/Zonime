@@ -17,8 +17,8 @@ let output = document.querySelector('#about-section')
 
 searchBtn.addEventListener('click', (e)=>{
     e.preventDefault()
-    if (userInput.value === 0) {
-        alert('Results Not Found 😟')
+    if (userInput.value === '') {
+        alert('Please enter something')
     }
 })
 
