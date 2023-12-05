@@ -15,9 +15,12 @@ ul{
     padding: 15px !important;
 }
 
-img{
+#logo, #cart{
     width: 18%;
-    
+}
+
+#main-home section{
+    border-bottom: 1px solid #FEC53C;
 }
 
 #main-home{
@@ -28,16 +31,45 @@ img{
 
 #main-sect1{
     background-image: url('https://i.postimg.cc/3xtT8s3b/Project-2.jpg');
-    height: 100vh;
+    height: 82vh;
     background-repeat: no-repeat;
     background-size: cover;
     border-bottom: #FEC53C 1px solid;
+    padding-top: 15%;
 }
 
+#main-sect1 h1{
+    text-shadow: 0 0 8px #434242;
+}
 
+#main-sect1 button{
+    padding: 15px;
+    border-radius: 25px;
+    border: none;
+    background-color: #FEC53C;
+    box-shadow: 0 0 12px #996d07;
+}
 
+#cards{
+    padding: 25px 10%
+}
+#cards img{
+    border-radius: 15px;
+    box-shadow: 0 0 12px #aaaaaa;
+    width: 390px;
+}
+#cards h5{
+    border-radius: 15px;
+    text-shadow: 0 0 3px #888;
+    color: #fff;
+}
 
-
+footer{
+    background-color: #FEC53C;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+}
 
 
 
