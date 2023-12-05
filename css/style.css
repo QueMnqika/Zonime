@@ -46,7 +46,7 @@ ul{
     padding: 15px;
     border-radius: 25px;
     border: none;
-    background-color: #FEC53C;
+    background: linear-gradient(0deg, #FEC53C 6%, rgba(255, 255, 255, 0.90) 161%);
     box-shadow: 0 0 12px #996d07;
 }
 
@@ -108,4 +108,16 @@ footer{
 #owner p{
     text-shadow: 0 0 4px  #2b2b2b;
     text-emphasis: 2.9px;
+}
+
+/* PRODUCT PAGE */
+
+#about-section{
+    background-color: #070707;
+    border-bottom: #FEC53C 1px solid;
+}
+
+#about-section a:hover{
+    background: linear-gradient(0deg, #FEC53C 6%, rgba(255, 255, 255, 0.90) 161%);
+    box-shadow: 0 0 8px #2b2b2b;
 }
