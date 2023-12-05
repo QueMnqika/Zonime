@@ -27,7 +27,7 @@ img{
 }
 
 #main-sect1{
-    background-image: url('https://i.postimg.cc/vBjkMFpd/generate-movies-coll-1.jpg');
+    background-image: url('https://i.postimg.cc/3xtT8s3b/Project-2.jpg');
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
@@ -47,14 +47,33 @@ img{
 /* ABOUT PAGE */
 
 #about-main{
-    background-image: url('https://i.postimg.cc/23p4C2k6/fotor-ai-20231204112125.jpg');
-    height: 100vh;
+    background-image: url('https://i.postimg.cc/8P0Cwf6C/Project-3.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     color: #fff;
     font-size: 23px;
 }
 
+#owner{
+    display: flex;
+    justify-content: space-around;
+    margin: 45px 12%;
+}
+
 #owner img{
+    margin-top: 25px;
     border-radius: 15px;
+    height: 305px;
+}
+
+#about-main p{
+    text-shadow: 0 0 4px  #2b2b2b;
+    text-emphasis: 2.9px;
+    margin: 15px 5%;
+    
+}
+
+#owner p{
+    text-shadow: 0 0 4px  #2b2b2b;
+    text-emphasis: 2.9px;
 }
