@@ -125,3 +125,21 @@ footer{
 #search-bar{
     margin-left: 73%;
 }
+
+/* CONTACT PAGE */
+
+#contact-section{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+}
+
+
+/* ADMIN */
+#admin-section{
+    background-image: url('https://ibb.co/6Zp6N0q');
+}
+/* ADMIN */
+#admin-output li{
+   
+}
