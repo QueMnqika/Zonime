@@ -1,4 +1,4 @@
-let adminOutput = document.querySelector('#admin-output')
+let adminOutput = document.querySelector('#admin-table')
 let movieList = []
 let addItem = document.querySelector('#add-to-admin')
 let addName = document.querySelector('#floatingInput1')
@@ -53,10 +53,13 @@ addItem.addEventListener('click', (e) => {
     overall(movieList)
 })
 
+localStorage.setItem('movieList', JSON.stringify(movieList))
+
+
 // SETTING LOCAL STORAGE
 function storage() {
     localStorage.setItem('movieList', JSON.stringify(movieList))
-    moviesArray = JSON.parse(localStorage.getItem('movieList'))
+    movieList = JSON.parse(localStorage.getItem('movieList'))
 }
 // DISPLAYING THE PRODUCTS
 function overall() {
@@ -64,11 +67,10 @@ function overall() {
             
             return `
             
-            <div>
-                <table id="admin-table">
+                
                     <tr id="admin-section">
-                        <td id="admin-section">${index + 1}</td>
-                        <td id="admin-section">
+                        <td  id="admin-section">${index + 1}</td>
+                        <td>
                         <img src="${item.picture}" id="admin-pics">
                         </td>
                         <td id="admin-section" style="text-align: center; padding: 15px;">${item.name}</td>
@@ -77,8 +79,6 @@ function overall() {
                         <td id="admin-section"><button style="padding: 15px; margin: 5px; border: none; border-radius: 25px; box-shadow: 0 0 8px #000" value = '${index}'>Edit</button></td>
                         <td id="admin-section"><button style="padding: 15px; margin: 5px; border: none; border-radius: 25px; box-shadow: 0 0 8px #000;" class='delete' value = '${index}'>Remove</button></td>
                     </tr>
-                </table>
-            </div>
             
             `
         })

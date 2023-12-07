@@ -119,6 +119,7 @@ footer{
 #about-section{
     background-color: #070707;
     border-bottom: #FEC53C 1px solid;
+    
 }
 
 #about-section img{
@@ -127,18 +128,19 @@ footer{
     margin-left: 18%;
 }
 
-@media screen and (max-width: 690px) {
-    #about-section img{
-        width: 250px;
-        height: 400px;
-        margin-left: 11%;
-    }
-}
+
 
 #about-section a:hover{
     background: linear-gradient(0deg, #FEC53C 6%, rgba(255, 255, 255, 0.90) 161%);
     box-shadow: 0 0 8px #2b2b2b;
 }
+
+#products-section{
+    display: grid;
+    grid-template-rows: repeat(13, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+}
+
 
 #search-bar{
     display: flex;
@@ -168,4 +170,25 @@ footer{
 
 #admin-pics{
     width: 120px;
+    border: none;
+}
+
+/* media queries */
+@media screen and (max-width: 690px) {
+    #about-section img{
+        width: 250px;
+        height: 400px;
+        margin-left: 6%;
+    }
+
+    #products-section{
+        display: flex !important;
+        flex-wrap: wrap !important;
+    }
+    #about-section{
+        background-color: #070707;
+        border-bottom: #FEC53C 1px solid;
+        width: 100%;
+        
+    }
 }
