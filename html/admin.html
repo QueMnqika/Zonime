@@ -44,10 +44,55 @@
     </nav>
 </header>
 
-    <section id="admin-section">
-      <table id="admin-output">
-        
-      </table>
+    <section class="d-flex justify-content-end mt-5">
+      <button type="button" class="btn btn-success me-5" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Add Items</button>
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add products</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body bg-dark text-warning">
+              <form>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingInput1" placeholder="Product Name">
+                  <label for="floatingInput">Product Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="date" class="form-control" id="floatingInput2" placeholder="Product Year">
+                  <label for="floatingInput">Product Year</label>
+                </div>
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="floatingInput3" placeholder="Item Decription">
+                  <label for="floatingPassword">Item Decription</label>
+                </div>
+                <br>
+                <div class="form-floating mb-3">
+                  <input type="number" class="form-control" id="floatingInput4" placeholder="Item Price">
+                  <label for="floatingInput">Item Price</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingInput5" placeholder="Completed (true/false)">
+                  <label for="floatingInput">Completed (true/false)</label>
+                </div>
+                <div class="form-floating">
+                  <div class="mb-3">
+                    <label for="formFile" class="form-label">Default file input example</label>
+                    <input class="form-control" type="text" id="formFile">
+                  </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-outline-warning" id="add-to-admin">Add Item</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="admin-output">
     </section>
 
     <footer>

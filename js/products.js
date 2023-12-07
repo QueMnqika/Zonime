@@ -6,12 +6,15 @@ let output = document.querySelector('#products-section')
 let productShown = JSON.parse(localStorage.getItem("movieList"));
 
 
-
-if (productShown.length === 0) {
-    output.innerHTML = `<div class="spinner-grow" style="padding: 5%; margin: 5% 48%!important;" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>`
+function removing() {
+    if (productShown.length === 0) {
+        output.innerHTML = `<div class="spinner-grow" style="padding: 5%; margin: 5% 48%!important;" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>`
+    }
 }
+
+
 // SEARCHING BUTTON EVEN LISTENER
 searchBtn.addEventListener('click', (e) => {
     e.preventDefault()
@@ -369,10 +372,10 @@ function searchResults() {
 
 
 function displayItems() {
+    // referenced from: Traversy Media, javascript beginner tutorial
     if (Array.isArray(productShown)) {
-        productShown.forEach((item, index) => {
+        productShown.filter((item, index) => {
           output.innerHTML = `
-          <tr>
           <section id="about-section">
               <div>
                   <h3 class="display-3 text-center pt-5 text-light">NEW RELEASE</h3>
@@ -383,6 +386,9 @@ function displayItems() {
                                   <img src="https://i.postimg.cc/8k9KWWdH/The-Lion-King-Simba-Print-All-Posters-com-1.jpg" class="card-img-top" alt="The Lion King: The Movie" height="600px">
                                   <div class="card-body p-3">
                                       <h5 class="card-title text-center">The Lion King: The Movie</h5>
+                                  </div>
+                                  <div>
+                                    <p class="display-5 text-center text-light">R${productShown[0].price}</p>
                                   </div>
                                   <div id="add-cart" class="d-flex justify-content-center">
                                       <a class="btn btn-sm btn-outline-warning d-flex pt-3" id="add-1">
@@ -398,6 +404,9 @@ function displayItems() {
                                   <div class="card-body p-3">
                                       <h5 class="card-title text-center">Flash</h5>
                                   </div>
+                                  <div>
+                                    <p class="display-5 text-center text-light">R${productShown[0 + 1].price}</p>
+                                  </div>
                                   <div id="add-cart" class="d-flex justify-content-center">
                                       <a class="btn btn-sm btn-outline-warning d-flex pt-3" id="add-2">
                                           <lord-icon src="https://cdn.lordicon.com/evyuuwna.json" trigger="hover"></lord-icon>
@@ -412,6 +421,9 @@ function displayItems() {
                                   <div class="card-body p-3">
                                       <h5 class="card-title text-center">Demon Slayer: Swordsmith Village</h5>
                                   </div>
+                                  <div>
+                                    <p class="display-5 text-center text-light">R${productShown[1 + 1].price}</p>
+                                  </div>
                                   <div id="add-cart" class="d-flex justify-content-center">
                                       <a class="btn btn-sm btn-outline-warning d-flex pt-3" id="add-3">
                                           <lord-icon src="https://cdn.lordicon.com/evyuuwna.json" trigger="hover"></lord-icon>
@@ -424,8 +436,7 @@ function displayItems() {
                   </div>
               </div>
           </section>
-         </tr>
-         <tr>
+         
           <section id="about-section">
               <h3 class="display-3 text-center pt-5 text-light">ACTION</h3>
               <div id="cards"> 
@@ -436,6 +447,9 @@ function displayItems() {
                           <div class="card-body p-3">
                               <h5 class="card-title text-center">One Piece Live Action Series</h5>
                           </div>
+                          <div>
+                            <p class="display-5 text-center text-light">R${productShown[2 + 1].price}</p>
+                            </div>
                           <div id="add-cart" class="d-flex justify-content-center">
                               <a class="btn btn-sm btn-outline-warning d-flex pt-3" id="add-4">
                                   <lord-icon src="https://cdn.lordicon.com/evyuuwna.json" trigger="hover"></lord-icon>
@@ -450,6 +464,9 @@ function displayItems() {
                           <div class="card-body p-3">
                               <h5 class="card-title text-center">The Meg 2</h5>
                           </div>
+                          <div>
+                                    <p class="display-5 text-center text-light">R${productShown[3 + 1].price}</p>
+                                  </div>
                           <div id="add-cart" class="d-flex justify-content-center">
                               <a class="btn btn-sm btn-outline-warning d-flex pt-3" id="add-5">
                                   <lord-icon src="https://cdn.lordicon.com/evyuuwna.json" trigger="hover"></lord-icon>
@@ -464,6 +481,9 @@ function displayItems() {
                           <div class="card-body p-3">
                               <h5 class="card-title text-center">The Monkey King</h5>
                           </div>
+                          <div>
+                                    <p class="display-5 text-center text-light">R${productShown[4 + 1].price}</p>
+                                  </div>
                           <div id="add-cart" class="d-flex justify-content-center">
                               <a class="btn btn-sm btn-outline-warning d-flex pt-3" id="add-6">
                                   <lord-icon src="https://cdn.lordicon.com/evyuuwna.json" trigger="hover"></lord-icon>
@@ -475,8 +495,7 @@ function displayItems() {
                   </div>
               </div>
           </section>
-         </tr>
-         <tr>
+        
           <section id="about-section">
               <h3 class="display-3 text-light text-center">ANIME</h3>
               <div id="cards"> 
@@ -487,6 +506,9 @@ function displayItems() {
                           <div class="card-body p-3">
                               <h5 class="card-title text-center">Naruto</h5>
                           </div>
+                          <div>
+                                    <p class="display-5 text-center text-light">R${productShown[5 + 1].price}</p>
+                                  </div>
                           <div id="add-cart" class="d-flex justify-content-center">
                               <a class="btn btn-sm btn-outline-warning d-flex pt-3" id="add-7">
                                   <lord-icon src="https://cdn.lordicon.com/evyuuwna.json" trigger="hover"></lord-icon>
@@ -501,6 +523,9 @@ function displayItems() {
                           <div class="card-body p-3">
                               <h5 class="card-title text-center">Attack on Titan</h5>
                           </div>
+                          <div>
+                                    <p class="display-5 text-center text-light">R${productShown[6 + 1].price}</p>
+                                  </div>
                           <div id="add-cart" class="d-flex justify-content-center">
                               <a class="btn btn-sm btn-outline-warning d-flex pt-3" id="add-8">
                                   <lord-icon src="https://cdn.lordicon.com/evyuuwna.json" trigger="hover"></lord-icon>
@@ -515,6 +540,9 @@ function displayItems() {
                           <div class="card-body p-3">
                               <h5 class="card-title text-center">Your Name</h5>
                           </div>
+                          <div>
+                                    <p class="display-5 text-center text-light">R${productShown[7 + 1].price}</p>
+                                  </div>
                           <div id="add-cart" class="d-flex justify-content-center">
                               <a class="btn btn-sm btn-outline-warning d-flex pt-3" id="add-9">
                                   <lord-icon src="https://cdn.lordicon.com/evyuuwna.json" trigger="hover"></lord-icon>
@@ -538,6 +566,9 @@ function displayItems() {
                           <div class="card-body p-3">
                               <h5 class="card-title text-center">Beautiful Disaster</h5>
                           </div>
+                          <div>
+                                    <p class="display-5 text-center text-light">R${productShown[7 + 1].price}</p>
+                                  </div>
                           <div id="add-cart" class="d-flex justify-content-center">
                               <a class="btn btn-sm btn-outline-warning d-flex pt-3" id="add-10">
                                   <lord-icon src="https://cdn.lordicon.com/evyuuwna.json" trigger="hover"></lord-icon>
@@ -552,6 +583,9 @@ function displayItems() {
                           <div class="card-body p-3">
                               <h5 class="card-title text-center">Every Day</h5>
                           </div>
+                          <div>
+                                    <p class="display-5 text-center text-light">R${productShown[9 + 1].price}</p>
+                                  </div>
                           <div id="add-cart" class="d-flex justify-content-center">
                               <a class="btn btn-sm btn-outline-warning d-flex pt-3" id="add-11">
                                   <lord-icon src="https://cdn.lordicon.com/evyuuwna.json" trigger="hover"></lord-icon>
@@ -566,6 +600,9 @@ function displayItems() {
                           <div class="card-body p-3">
                               <h5 class="card-title text-center">Crazy Rich Asians</h5>
                           </div>
+                          <div>
+                                    <p class="display-5 text-center text-light">R${item.price}</p>
+                                  </div>
                           <div id="add-cart" class="d-flex justify-content-center">
                               <a class="btn btn-sm btn-outline-warning d-flex pt-3" id="add-12">
                                   <lord-icon src="https://cdn.lordicon.com/evyuuwna.json" trigger="hover"></lord-icon>
@@ -587,3 +624,4 @@ function displayItems() {
 
 
 displayItems()
+removing()

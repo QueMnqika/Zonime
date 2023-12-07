@@ -1,5 +1,12 @@
 let adminOutput = document.querySelector('#admin-output')
 let movieList = []
+let addItem = document.querySelector('#add-to-admin')
+let addName = document.querySelector('#floatingInput1')
+let addYear = document.querySelector('#floatingInput2')
+let addDescription = document.querySelector('#floatingInput3')
+let addPrice = document.querySelector('#floatingInput4')
+let addCompleted = document.querySelector('#floatingInput5')
+let addImage = document.querySelector('#formFile')
 
 // MOVIES WITH THEIR TEMPLATE
 
@@ -38,27 +45,41 @@ let movie12 = new Movie("Crazy Rich Asians", 2018, "This contemporary romantic c
 // ADDING MOVIES TO ARRAY
 movieList.push(movie1, movie2, movie3, movie4, movie5, movie6, movie7, movie8, movie9, movie10, movie11, movie12)
 
+// ADDING FROM MODAL
+addItem.addEventListener('click', (e) => {
+    e.preventDefault()
+    let newMovie = new Movie(`${addName.value}`, `${addYear.value}`, `${addDescription.value}`, `${addPrice.value}`, `${addCompleted.value}`, addImage.value)
+    movieList.push(newMovie)
+    overall(movieList)
+})
+
 // SETTING LOCAL STORAGE
 function storage() {
     localStorage.setItem('movieList', JSON.stringify(movieList))
     moviesArray = JSON.parse(localStorage.getItem('movieList'))
 }
-storage()
 // DISPLAYING THE PRODUCTS
 function overall() {
         newList = movieList.map((item, index)=>{
+            
             return `
-                    <tr style="border: 1px solid #f4f4f4;">
-                        <td>${index + 1}</td>
-                        <td>
-                        <img src="${item.picture}">
+            
+            <div>
+                <table id="admin-table">
+                    <tr id="admin-section">
+                        <td id="admin-section">${index + 1}</td>
+                        <td id="admin-section">
+                        <img src="${item.picture}" id="admin-pics">
                         </td>
-                        <td>${item.name}</td>
-                        <td>${item.description}</td>
-                        <td> R${item.price}</td>
-                        <td><button value = '${index}'>Edit</button></td>
-                        <td><button class='delete' value = '${index}'>Remove</button></td>
+                        <td id="admin-section" style="text-align: center; padding: 15px;">${item.name}</td>
+                        <td id="admin-section">${item.description}</td>
+                        <td id="admin-section"> R${item.price}</td>
+                        <td id="admin-section"><button style="padding: 15px; margin: 5px; border: none; border-radius: 25px; box-shadow: 0 0 8px #000" value = '${index}'>Edit</button></td>
+                        <td id="admin-section"><button style="padding: 15px; margin: 5px; border: none; border-radius: 25px; box-shadow: 0 0 8px #000;" class='delete' value = '${index}'>Remove</button></td>
                     </tr>
+                </table>
+            </div>
+            
             `
         })
         adminOutput.innerHTML = newList.join('')
@@ -71,6 +92,7 @@ function overall() {
 
     }
 
+    // ITEM REMOVAL FROM ADMIN
     adminOutput.addEventListener('click', (e)=>{
         e.preventDefault()
         if (e.target.classList.contains('delete')) {

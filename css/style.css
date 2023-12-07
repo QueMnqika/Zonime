@@ -11,6 +11,10 @@ body{
     display: grid;
 }
 
+header{
+    box-shadow: 3px 0 5px #070707;
+}
+
 ul{
     padding: 15px !important;
 }
@@ -117,29 +121,51 @@ footer{
     border-bottom: #FEC53C 1px solid;
 }
 
+#about-section img{
+    width: 250px;
+    height: 400px;
+    margin-left: 18%;
+}
+
+@media screen and (max-width: 690px) {
+    #about-section img{
+        width: 250px;
+        height: 400px;
+        margin-left: 11%;
+    }
+}
+
 #about-section a:hover{
     background: linear-gradient(0deg, #FEC53C 6%, rgba(255, 255, 255, 0.90) 161%);
     box-shadow: 0 0 8px #2b2b2b;
 }
 
 #search-bar{
-    margin-left: 73%;
+    display: flex;
+    justify-content: center;
+    margin-left: 38%;
 }
 
 /* CONTACT PAGE */
 
 #contact-section{
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, 1fr);
+    padding: 5%;
 }
 
 
 /* ADMIN */
 #admin-section{
-    background-image: url('https://ibb.co/6Zp6N0q');
+    border: 2px solid #fff;
+    margin: 20% 5%;
 }
-/* ADMIN */
-#admin-output li{
-   
+
+#admin-output{
+    margin: 2% 5%;
+}
+
+#admin-pics{
+    width: 120px;
 }
