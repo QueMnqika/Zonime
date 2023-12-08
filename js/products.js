@@ -8,13 +8,36 @@ let cart = []
 
 
 
-function removing() {
+
+
+// ADD TO CART function
+function addToCart() {
+    let prods = [...productShown]
+    prods.map((prodc, index), (productShown)=>{
+        prods.push(productShown[index])
+        console.log('btn clicked');
+    })
+    
+    cart.push(prods)
+    localStorage.setItem('purchased', JSON.stringify(cart))
+}
+
+// output.addEventListener('click', () =>{
+//     if (event.target.hasAttribute('data-addBtn')) {
+//         addToCart(event.target.value)
+//     }
+// })
+
+
+// SPINNER SELF-INVOKING FINCTION
+(function spinner() {
+    [...productShown]
     if (productShown.length === 0) {
-        output.innerHTML = `<div class="spinner-grow" style="padding: 5%; margin: 5% 48%!important;" role="status">
+        output.innerHTML = `<div class="spinner-grow" style="padding: 5%; margin: 5% 100%!important;" role="status">
         <span class="visually-hidden">Loading...</span>
       </div>`
     }
-}
+})()
 
 
 // SEARCHING BUTTON EVEN LISTENER
@@ -353,11 +376,11 @@ searchBtn.addEventListener('click', (e) => {
 sortBtn.addEventListener('click', (e) => {
     e.preventDefault()
     // referenced from ChatGPT
-    shownMovies = productShown.price
-        if (highPrice.value === 'High Price') {
-            shownMovies.sort((a, b) => b.price - a.price)
+    prices = productShown.price
+        if (highPrice === 'High Price') {
+            prices.sort((a, b) => b.price - a.price)
         } else {
-            shownMovies.sort((a, b) => a.price - b.price)
+            prices.sort((a, b) => a.price - b.price)
         }
         
     })
@@ -384,18 +407,36 @@ function displayItems() {
                 </div>
                 <p class="text-center text-light">${item.name}</p>
                 <p class="text-center text-light"> R${item.price}</p>
-                <div id="add-cart" class="d-flex justify-content-center p-4">
-                    <a class="btn btn-sm btn-outline-warning d-flex pt-3" id="add-1">
+                <div class="d-flex justify-content-center p-4">
+                    <button data-addBtn class="btn btn-sm btn-outline-warning d-flex pt-3" value = "${index}" id="add-1" onclick=addToCart()>
                     <lord-icon src="https://cdn.lordicon.com/evyuuwna.json" trigger="hover"></lord-icon>
                     <p class="pt-1 addCart">Add to Cart</p>
-                    </a>
+                    </button>
                 </div>
             </div>
                ` 
-        })
+        }).join('')
     }
 }
 
 
 displayItems()
-removing()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

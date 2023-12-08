@@ -83,7 +83,7 @@ footer{
 /* ABOUT PAGE */
 
 #about-main{
-    background-image: url('https://i.postimg.cc/8P0Cwf6C/Project-3.jpg');
+    background-image: url('https://i.postimg.cc/8P0Cwf6C/Project-3.jpg') !important;
     background-repeat: no-repeat;
     background-size: cover;
     color: #fff;
@@ -119,7 +119,6 @@ footer{
 #about-section{
     background-color: #070707;
     border-bottom: #FEC53C 1px solid;
-    
 }
 
 #about-section img{
@@ -137,7 +136,7 @@ footer{
 
 #products-section{
     display: grid;
-    grid-template-rows: repeat(13, 1fr);
+    grid-template-rows: repeat(1, 1fr);
     grid-template-columns: repeat(3, 1fr);
 }
 
@@ -153,7 +152,7 @@ footer{
 #contact-section{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(1, 1fr);
+    grid-template-rows: repeat(1 , 1fr);
     padding: 5%;
 }
 
@@ -173,14 +172,19 @@ footer{
     border: none;
 }
 
+
 /* media queries */
-@media screen and (max-width: 690px) {
+@media screen and (min-width: 320px) and (max-width: 690px) {
+    #admin-table{
+        padding: 0;
+        margin: 0;
+    }
     #about-section img{
         width: 250px;
         height: 400px;
         margin-left: 6%;
     }
-
+    
     #products-section{
         display: flex !important;
         flex-wrap: wrap !important;
@@ -190,5 +194,22 @@ footer{
         border-bottom: #FEC53C 1px solid;
         width: 100%;
         
+    }
+    #contact-section{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        
+    }
+    #contact-section form{
+        margin: 0 10%;
+        
+    }
+    #contact-section div>img{
+        display: none;
+    }
+
+    #main-home img{
+        margin-left: -40px;
+        width: 355px;
     }
 }
