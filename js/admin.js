@@ -76,7 +76,31 @@ function overall() {
                         <td id="admin-section" style="text-align: center; padding: 15px;">${item.name}</td>
                         <td id="admin-section">${item.description}</td>
                         <td id="admin-section"> R${item.price}</td>
-                        <td id="admin-section"><button style="padding: 15px; margin: 5px; border: none; border-radius: 25px; box-shadow: 0 0 8px #000" value = '${index}'>Edit</button></td>
+                        <td id="admin-section">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                          Edit
+                        </button>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                ...
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        </td>
                         <td id="admin-section"><button style="padding: 15px; margin: 5px; border: none; border-radius: 25px; box-shadow: 0 0 8px #000;" class='delete' value = '${index}'>Remove</button></td>
                     </tr>
             
