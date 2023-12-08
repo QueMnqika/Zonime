@@ -12,11 +12,16 @@ let cart = []
 
 // ADD TO CART function
 function addToCart(index) {
-    let selectedProduct = productShown[index];
-    console.log('Button clicked for:', selectedProduct);
-
-    cart.push(selectedProduct);
-    localStorage.setItem('selectedMovies', JSON.stringify(cart));
+    try {
+        let selectedProduct = productShown[index];
+        console.log('Button clicked for:', selectedProduct);
+    
+        cart.push(selectedProduct);
+        localStorage.setItem('selectedMovies', JSON.stringify(cart));
+    } catch (error) {
+        alert(`ERROR: ${error}`)
+    }
+    localStorage.setItem('cart', JSON.stringify(cart))
 }
 
 // output.addEventListener('click', () =>{

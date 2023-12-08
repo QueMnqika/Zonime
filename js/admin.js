@@ -7,6 +7,7 @@ let addDescription = document.querySelector('#floatingInput3')
 let addPrice = document.querySelector('#floatingInput4')
 let addCompleted = document.querySelector('#floatingInput5')
 let addImage = document.querySelector('#formFile')
+let sortAdmin = document.querySelector('#admin-sort')
 
 // MOVIES WITH THEIR TEMPLATE
 
@@ -68,7 +69,7 @@ function overall() {
             return `
             
                 
-                    <tr id="admin-section">
+                    <tr id="admin-table">
                         <td  id="admin-section">${index + 1}</td>
                         <td>
                         <img src="${item.picture}" id="admin-pics">
@@ -76,7 +77,55 @@ function overall() {
                         <td id="admin-section" style="text-align: center; padding: 15px;">${item.name}</td>
                         <td id="admin-section">${item.description}</td>
                         <td id="admin-section"> R${item.price}</td>
-                        <td id="admin-section"><button style="padding: 15px; margin: 5px; border: none; border-radius: 25px; box-shadow: 0 0 8px #000" value = '${index}'>Edit</button></td>
+                        <td id="admin-section"><div>
+                        <button type="button" class="btn btn-success m-3" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Edit</button>
+                      </div>
+                
+                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Add products</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body bg-dark text-warning">
+                              <form>
+                                <div class="form-floating mb-3">
+                                  <input type="text" class="form-control" id="floatingInput1" placeholder="Product Name">
+                                  <label for="floatingInput">${item.name}</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                  <input type="date" class="form-control" id="floatingInput2" placeholder="Product Year">
+                                  <label for="floatingInput">${item.year}</label>
+                                </div>
+                                <div class="form-floating">
+                                  <input type="text" class="form-control" id="floatingInput3" placeholder="Item Decription">
+                                  <label for="floatingPassword">${item.description}</label>
+                                </div>
+                                <br>
+                                <div class="form-floating mb-3">
+                                  <input type="number" class="form-control" id="floatingInput4" placeholder="Item Price">
+                                  <label for="floatingInput">R${item.price}</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                  <input type="text" class="form-control" id="floatingInput5" placeholder="Completed (true/false)">
+                                  <label for="floatingInput">${item.isComplete}</label>
+                                </div>
+                                <div class="form-floating">
+                                  <div class="mb-3">
+                                    <label for="formFile" class="form-label">Default file input example</label>
+                                    <input class="form-control" type="text"  value = "${item.picture}" id="formFile">
+                                  </div>
+                              </form>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-outline-warning" id="add-to-admin">Add Item</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </section></td>
                         <td id="admin-section"><button style="padding: 15px; margin: 5px; border: none; border-radius: 25px; box-shadow: 0 0 8px #000;" class='delete' value = '${index}'>Remove</button></td>
                     </tr>
             
@@ -110,7 +159,12 @@ function overall() {
           }
     })
 
+    // function sort() {
+    //         movieList.prices.sort((a, b) => b.price - a.price)
+    //         movieList.prices.sort((a, b) => a.price - b.price)
+    // }
     
+    // sortAdmin.addEventListener('click', sort())
 
 
     // FUNCTION CALLING
